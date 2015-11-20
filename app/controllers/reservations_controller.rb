@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
 
 		if @reservation.save 
 			
-			ReservationMailer.booking_email(current_user, @list, @reservation).deliver_now
+			ReservationWorker.perform_in(10.seconds,current_user.id, @list.id, @reservation.id)
 		else
 			redirect_to root_path, notice: "Book Error!"
 		end

@@ -17,4 +17,7 @@ Rails.application.routes.draw do
     resources :reservations, only:[:create]
   end
 
+  require 'sidekiq/web'
+    mount Sidekiq::Web => '/sidekiq'
+
 end
