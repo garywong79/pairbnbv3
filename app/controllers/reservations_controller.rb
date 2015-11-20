@@ -3,9 +3,17 @@ class ReservationsController < ApplicationController
 
 	def create
 		@list = List.find_by(params[:id])
-		@reservation = @list.reservations.create(reservation_params)
+		@reservation = @list.reservations.new(reservation_params)
+		# @reservation.id = current_user.id
 		current_user.reservations << @reservation
 		redirect_to root_path, notice: "Successfully Book"
+
+		if @reservation.save 
+			
+			ReservationMailer.booking_email(current_user, @list, @reservation).deliver_now
+		else
+			redirect_to root_path, notice: "Book Error!"
+		end
 	end
 
 	private
