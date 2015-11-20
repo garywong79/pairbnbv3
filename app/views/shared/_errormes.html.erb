@@ -1,0 +1,15 @@
+<% if @user && @user.errors.any? %>
+<script type="text/javascript">
+	<% @user.errors.full_messages.each do |e| %>
+		toastr.error("<%= e %>")
+		<% end %>
+		</script>
+<% end %>
+
+<% if @list && @list.errors.any? %>
+<script type="text/javascript">
+	<% @list.errors.full_messages.each do |e| %>
+		toastr.error("<%= e %>")
+		<% end %>
+		</script>
+<% end %>

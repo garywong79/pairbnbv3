@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  list_id: 
+  check_in_date: MyString
+  check_out_date: MyString
+  price: 1
+  total: 1
+
+two:
+  user_id: 
+  list_id: 
+  check_in_date: MyString
+  check_out_date: MyString
+  price: 1
+  total: 1
