@@ -21,7 +21,10 @@
 		<% if logged_in? && current_user.id != list.user.id %>
 			<%= render 'reservations/form', list: list  %>
 		<% end %>
-	<% end %>
+		<% if logged_in? && !current_user.reservations.empty?%>
+		<%= link_to "Pay", "/transactions/new", class: "btn btn-info" %>
+		<% end %>
+<% end %>
 
 
 

@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119131724) do
+ActiveRecord::Schema.define(version: 20151121140551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "lists", force: :cascade do |t|
-    t.string   "price"
+    t.integer  "price"
     t.string   "description"
     t.integer  "bathroom"
     t.integer  "bedroom"
@@ -48,14 +48,15 @@ ActiveRecord::Schema.define(version: 20151119131724) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "provider"
     t.string   "uid"
     t.string   "image"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.string   "avatar"
+    t.string   "braintree_customer_id"
   end
 
   add_foreign_key "reservations", "lists"

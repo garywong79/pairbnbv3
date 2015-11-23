@@ -12,6 +12,9 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'fog'
 gem 'jquery-ui-rails'
 gem 'sidekiq'
+gem "braintree"
+gem 'gon'
+gem 'searchkick'
   
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record

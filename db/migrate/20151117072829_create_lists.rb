@@ -1,7 +1,7 @@
 class CreateLists < ActiveRecord::Migration
   def change
     create_table :lists do |t|
-      t.string :price
+      t.integer :price
       t.string :description
       t.integer :bathroom
       t.integer :bedroom

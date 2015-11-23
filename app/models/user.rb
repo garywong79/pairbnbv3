@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :reservations, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
 	has_secure_password
+  # searchkick
 	
 	
   def self.from_omniauth(auth)
@@ -29,6 +30,15 @@ class User < ActiveRecord::Base
       user.update(provider: auth.provider, uid: auth.uid) if ((user.uid==nil)||(user.provider==nil))
     	end
     	user
+  end
+
+  def booking_total_price
+    total_price = 200
+    total_price
+  end
+
+  def has_payment_info?
+    braintree_customer_id
   end
 
 	private
