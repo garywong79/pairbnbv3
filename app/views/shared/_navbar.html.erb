@@ -11,6 +11,16 @@
       <a class="navbar-brand" href="#">Pair BnB</a>
     </div>
 
+    <%= form_for :home, url: search_result_path, method: :get do |f|%>
+    <div class="navbar-form navbar-left">
+      <div class="col-md-12">
+    
+        <%= f.text_field :search, placeholder: "where are you going?" %>
+        <%= f.submit "Search", class: "btn btn-default" %>
+      </div>
+    </div>
+    <% end %>
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">

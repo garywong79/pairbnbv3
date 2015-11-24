@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 
   root 'home#index'
+  get '/search', to: "home#search", as: "search_result"
 
   get "/signup", to: "users#new", as: "signup"
   resources :users, only: :create

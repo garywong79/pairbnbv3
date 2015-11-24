@@ -1,0 +1,15 @@
+
+
+<div>
+<% if params[:home][:search].present? %>
+	<%= "#{@results.total_count} found in your search in #{@results.took}"  %>
+	<% else %>
+<%= "#{@results.count} total results in the database!" %>
+	<% end %>	
+</div>
+
+<% @results.each do |l| %>
+	<% l.images.each do |a| %>
+	<ul><%= image_tag a.thumb.to_s %></ul>
+	<% end %>	
+<% end %>	

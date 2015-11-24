@@ -7,6 +7,6 @@ mount_uploaders :images, ImageUploader
 
 validates :price, :bathroom, :bedroom, :bed, :property_type, :room_type, presence: true
 
-# searchkick
+searchkick
 
 end

@@ -6,4 +6,15 @@ class HomeController < ApplicationController
 			@reservation = Reservation.new
 		end
 	end
+
+	def search
+		List.reindex
+		if params[:home][:search].present?
+			
+			@results = List.search params[:home][:search]
+		else
+			@results = List.all
+		end
+	end
+
 end
