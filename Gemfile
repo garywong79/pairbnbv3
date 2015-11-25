@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+# source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -42,7 +42,7 @@ gem 'sinatra'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -60,6 +60,11 @@ group :development do
   gem 'spring'
 
 
+end
+
+group :production do
+	gem 'unicorn'
+	gem 'rail_12factor'
 end
 
 gem 'figaro'
